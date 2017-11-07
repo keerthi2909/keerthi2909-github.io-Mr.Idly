@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Mr. Idly - Authentic Indian Restaurant</title>
+    <meta charset="utf-8">
+    <!-- Responsive website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <!--css file-->
+    <link rel="stylesheet" type="text/css" href="./CSS/contact.css">
+    <link rel="shortcut icon" href="./img/titlelogo.jpg" type="image/png">
+
+    <script>
+      function openNav() {
+         document.getElementById("mySidenav").style.width = "250px";
+         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
+      function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.body.style.backgroundColor = "white";
+      }
+
+      function myMap(){
+        var mapCanvas = document.getElementById("map");
+        var LatLng = {lat:52.4720225, lng:-1.933068};
+        var mapOptions = {
+        center: new google.maps.LatLng(52.4720225, -1.933068),
+        zoom: 10
+    };
+         var map = new google.maps.Map(mapCanvas, mapOptions);
+
+         var marker = new google.maps.Marker({
+          position: LatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+
+      }
+
+      </script>
+</head>
+<?php
+
+ $field1=$field2=$field3="";
+ $field3Err="";
+ if($_SERVER["REQUEST_METHOD"]=="POST"){
+
+   if(empty($_POST["field3"])){
+     $field3Err = "Type your message";
+   }
+
+   $field1= test_input($_POST["field1"]);
+   $field2= test_input($_POST["field2"]);
+ }
+
+ function test_input($data){
+
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+   return $data;
+ }
+
+?>
+
+<body>
+  <div class="container-fluid">
+    <div class="row" style="background-color:black;">
+        <div class="col-sm-11"><img src="./img/logo.png"></div>
+        <div class="col-sm-1"><span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span></div>
+    </div>
+<!--Sidenav Push Content w/ opacity-->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="./index.html">Mr.Idly</a>
+      <a href="./about.html">Our Story</a>
+      <a href="#" data-toggle="modal" data-target="#myModal">Menu</a>
+      <a href="./contact.html">Contact Us</a>
+    </div>
+
+    <div class="modal fade" id="myModal">
+     <div class="modal-dialog modal-sm">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h4><a href="./img/SI-Menu.pdf">South Indian Cusine</a></h4>
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
+         <div class="modal-header">
+           <h4><a href="./img/Tandoor-Menu.pdf">Tandoori Menu</a></h4>
+         </div>
+         <div class="modal-header">
+           <h4><a href="./img/SI-Menu.pdf">North Indian Cusine</a></h4>
+         </div>
+       </div>
+     </div>
+   </div>
+
+  </div>
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">CONTACT US</span>
+    </div>
+ </div>
+ <div style="color: #777;background-color:black;text-align:center;padding:50px 80px;text-align: justify;">
+   <h3 style="text-align:center;"><span><img src="./img/icon1.png"</span>169-171 Hagley Road<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Birmingham B16 8UQ<br>United Kingdom</h3><br>
+     <h3 style="text-align:center;"><span><img src="./img/icon2.png"</span>+44(0)121 454 1111</h3><br>
+     <h3 style="text-align:center;"><span><img src="./img/icon3.png"</span>admin@mr.idly.uk</h3>
+ </div>
+ <div class="bgimg-2">
+   <div class="captiontwo">
+     <div class="form-style">
+       <h2>Send us your thoughts!!!</h2>
+       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> #form-anchor" id="form-anchor">
+         <input type="text" name="field1" placeholder="Full Name" />
+         <input type="email" name="field2" placeholder="Email" />
+         <textarea  name="field3" placeholder="Message *" onkeyup="adjust_textarea(this)"><?php echo $field3Err;?></textarea>
+         <br>
+         <input type="submit" value="Send Message" />
+       </form>
+      </div>
+   </div>
+ </div>
+
+ <div style="color: #777;background-color:black;text-align:center;padding:50px 80px;text-align: justify;padding-left:160px;">
+   <div id="map" style="width:1200px;height:400px; background:yellow;align:center;"></div>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVHXxEO2wBO5oRG3vPhfNwTNC9r4s49BM&callback=myMap"></script>
+ </div>
+
+ <div class="bgimg-3">
+   <div class="row rowadd">
+     <div class="col-sm-6"><br>
+       <h4>Working Hours</h4>
+       <h5>Monday to Friday</h5>
+       <p>10.30AM - 10.30PM</p>
+       <h5>Saturday and Sunday</h5>
+       <p>10.00AM - 10.30PM</p>
+     </div>
+     <div class="col-sm-6"><br>
+       <h4>Buffet Availability</h4>
+       <h5>Monday to Friday</h5>
+       <p>Lunch Buffet</p>
+       <h5>Saturday and Sunday</h5>
+       <p>Breakfast and Lunch Buffet</p>
+     </div>
+   </div>
+<br>
+   <div class="row">
+     <div class="col-sm-12 rowsixbg">
+       <div><br><h6>169-171 Hagley Road,<br>Birmingham B16 8UQ</h6></div>
+     </div>
+   </div>
+
+</div>
+
+</body>
+</html>

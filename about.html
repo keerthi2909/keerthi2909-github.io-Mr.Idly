@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mr. Idly - Authentic Indian Restaurant</title>
+    <meta charset="utf-8">
+    <!-- Responsive website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <!--css file-->
+    <link rel="stylesheet" type="text/css" href="./CSS/about.css">
+    <link rel="shortcut icon" href="./img/titlelogo.jpg" type="image/png">
+
+    <script>
+      function openNav() {
+         document.getElementById("mySidenav").style.width = "250px";
+         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
+      function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.body.style.backgroundColor = "white";
+      }
+      jQuery(window).scroll(function() {
+      if (jQuery(this).scrollTop() > 100) {
+          jQuery('.slideone').stop().animate({ right: '0px' });
+      } else {
+          jQuery('.slideone').stop().animate({ right: '-780px' });
+      }
+      });
+
+    </script>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row" style="background-color:black;">
+          <div class="col-sm-11"><img src="./img/logo.png"></div>
+          <div class="col-sm-1"><span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span></div>
+      </div>
+      <div class="conttwo">
+      <div class="mx-auto container imageone">
+        <img class="img-fluid" src="./img/about_img.jpg">
+        <div class="overlay">
+          <div class="text">ABOUT US</div>
+        </div>
+      </div>
+    </div>
+<!--Sidenav Push Content w/ opacity-->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="./index.html">Mr.Idly</a>
+        <a href="./about.html">Our Story</a>
+        <a href="#" data-toggle="modal" data-target="#myModal">Menu</a>
+        <a href="./contact.html">Contact Us</a>
+      </div>
+      <div class="modal fade" id="myModal">
+       <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h4><a href="./img/SI-Menu.pdf">South Indian Cusine</a></h4>
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+           </div>
+           <div class="modal-header">
+             <h4><a href="./img/Tandoor-Menu.pdf">Tandoori Menu</a></h4>
+           </div>
+           <div class="modal-header">
+             <h4><a href="./img/SI-Menu.pdf">North Indian Cusine</a></h4>
+           </div>
+         </div>
+       </div>
+     </div>
+
+<!--Rowtwo -->
+    <div class=" container-fluid conttwo">
+      <div class="row rowtwo">
+        <div class="col-sm-12">
+        <div id="a" class="panels">
+          <img src="./img/about_img2.jpg">
+        </div>
+      </div>
+      </div>
+
+   <div class="slideone">
+     <h4>We at Mr. Idly pride ourselves in producing the finest high-quality South Indian food.
+     Our Chefs are specialists in the art of food preparation, and strive for only the best,
+     making sure our customers receive only the best. Our dishes combine the intense and aromatic flavours
+     of South Indian cuisine, to bring you a divinely tasting dish.<br><br>
+     So we cordially invite you to come and join us for dining.</h4>
+   </div>
+ </div>
+<!---->
+ </div><br>
+
+
+  </div>
+
+  </body>
+</html>
